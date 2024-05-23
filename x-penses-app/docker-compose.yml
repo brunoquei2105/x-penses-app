@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  database:
+    image: mysql:8.0
+    container_name: x-penses-container-db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: x-penses-db
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_PASSWORD: ${DATABASE_PASSWD}
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+    driver: local
