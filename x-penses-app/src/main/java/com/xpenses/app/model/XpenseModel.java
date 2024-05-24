@@ -28,9 +28,11 @@ public class XpenseModel {
     private String observation;
 
     @Column(nullable = false, name = "maturity-date")
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime maturityDate;
 
     @Column(nullable = false, name = "creation-date")
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdDate;
 
     @Column(nullable = false)
